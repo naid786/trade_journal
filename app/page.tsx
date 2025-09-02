@@ -51,7 +51,7 @@ export default function Home() {
         if (isNaN(startTs) || isNaN(endTs) || startTs >= endTs) return;
         const data = await fetchBinanceOHLC(symbol.symbol, selectedTf, startTs, endTs);
         setOhlcData(data);
-        const swingPoints = getSwing(data,4);
+        const swingPoints = getSwing(data,12);
         setSwings(swingPoints);
       } catch (e) {
         setOhlcData([]);
